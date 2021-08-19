@@ -1,0 +1,27 @@
+.card_container{
+    padding: 0;
+    margin: 10px 0px;
+    padding-bottom: 10px;
+    ion-card-header{
+        padding: 5px;
+    }
+
+    ion-card-content{
+        padding: 0;
+        img{
+            width: 100%;
+        }
+    }
+    .div_icon_wrapper{
+        display: flex;
+        justify-content: space-between;
+        font-size: 30px;
+        ion-icon{
+            margin-right: 15px;
+        }
+    }
+    ion-label{
+        display: block;
+        padding: 5px;
+    }
+}

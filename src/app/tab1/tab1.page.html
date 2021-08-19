@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Instagram Clone
+    </ion-title>
+    <div slot="end">
+      <ion-button fill="clear" color="dark">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" color="dark">
+        <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-slides [options]="slidesOpt">
+    <ion-slide *ngFor="let story of stories">
+      <app-story [story]="story"></app-story>
+    </ion-slide>
+  </ion-slides>
+
+  <div *ngFor="let post of posts">
+    <app-post [post]="post"></app-post>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)" position="bottom">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,31 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <div class="div_container">
+    <div class="div_login">
+      <ion-label class="lbl_title">Instagram</ion-label>
+      <div class="div_inner_login">
+        <ion-item lines="none">
+          <ion-input placeholder="Enter username, email, phone" type="email" [(ngModel)]="username"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input placeholder="Enter password" type="pasword" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-button color="secondary" expand="full" (click)="login()">Log In</ion-button>
+        <ion-label color="danger">forgot password ?</ion-label>
+        <ion-label class="lbl_or">OR</ion-label>
+        <ion-button expand="full" (click)="login()">
+          <ion-icon name="logo-facebook" slot="start"></ion-icon>
+          Login with facebook
+        </ion-button>
+      </div>
+    </div>
+    <div class="div_login">
+      <ion-label color="dark" (click)="goToSignup()">Don't have an account ? <ion-label color="primary">Sign up</ion-label></ion-label>
+    </div>
+  </div>
+</ion-content>

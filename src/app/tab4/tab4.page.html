@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let activity of acitvites" class="div_conainer">
+    <ion-label class="lbl_title">{{activity.duration}}</ion-label>
+    <ion-item *ngFor="let user of activity.activities" lines="none" class="ion-no-padding">
+      <ion-avatar>
+        <img src="{{user.user.avatar}}" />
+      </ion-avatar>
+      <ion-label><b>{{user.user.name}}</b> {{user.activity}} <span style="font-size: 12px;color: var(--ion-color-medium)">{{user.duration}}</span></ion-label>
+    </ion-item>
+  </div>
+
+</ion-content>

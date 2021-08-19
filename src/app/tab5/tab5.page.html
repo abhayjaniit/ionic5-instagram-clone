@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="!loginFlag">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title [class.no_padding]="loginFlag" *ngIf="userData.name">
+      {{userData.name.first}} {{userData.name.last}}
+      <ion-icon name="chevron-down-outline"></ion-icon>
+      <ion-badge color="danger">1</ion-badge>
+    </ion-title>
+    <div slot="end" *ngIf="loginFlag">
+      <ion-button fill="clear" color="dark">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" color="dark">
+        <ion-menu-button color="dark"></ion-menu-button>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="user_wrapper">
+    <ion-item class="item_user ion-no-padding" lines="none">
+      <ion-avatar>
+        <img src="{{userData.picture.thumbnail}}"/>
+      </ion-avatar>
+      <ion-label class="lbl_user_detail">
+        <ion-label>35<p>posts</p></ion-label>
+        <ion-label>271<p>followers</p></ion-label>
+        <ion-label>271<p>following</p></ion-label>
+      </ion-label>
+    </ion-item>
+    <ion-label class="lbl_username">{{userData.name.first}} {{userData.name.last}}</ion-label>
+    <div class="div_user_button" *ngIf="loginFlag">
+      <ion-button fill="outline" color="dark" class="btn_edit">
+        Edit profile
+      </ion-button>
+      <ion-button fill="outline" color="dark">
+        <ion-icon name="chevron-down-outline"></ion-icon>
+      </ion-button>
+    </div>
+      <ion-slides [options]="slidesOpt">
+        <ion-slide *ngFor="let story of stories">
+          <app-story [story]="story"></app-story>
+        </ion-slide>
+      </ion-slides>
+  </div>
+
+  <div class="div_user_post">
+    <ion-segment (ionChange)="segmentChanged($event)" [value]="selectedSegment">
+      <ion-segment-button value="post" mode="md">
+        <ion-icon name="grid-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="bookmark" mode="md">
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+    <div class="div_container_image" *ngIf="selectedSegment == 'post'">
+      <div *ngFor="let search of searchPost">
+        <img src="{{search.imageUrl}}" />
+      </div>
+    </div>
+
+    <div class="div_container_image" *ngIf="selectedSegment == 'bookmark'">
+      <div *ngFor="let search of bookmarks">
+        <img src="{{search.imageUrl}}" />
+      </div>
+    </div>
+  </div>
+</ion-content>

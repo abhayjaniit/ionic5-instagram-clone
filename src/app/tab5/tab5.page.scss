@@ -1,0 +1,56 @@
+ion-title{
+    display: flex;
+    align-items: center;
+}
+
+.no_padding{
+    padding: 0px;
+    padding-left: 10px;
+    text-align: left;
+}
+.user_wrapper{
+    padding-left: 10px;
+    padding-top: 10px;
+    .item_user{
+        ion-avatar{
+            height: 80px;
+            width: 80px;    
+        }
+        .lbl_user_detail{
+            display: flex;
+            justify-content: space-around;
+            
+            ion-label{
+                text-align: center;
+            }
+        }
+    }
+    .lbl_username{
+        font-weight: bold;
+    }
+    .div_user_button{
+        display: flex;
+        margin: 10px 0px;
+
+        .btn_edit{
+            flex: 1;
+            
+        }
+        ion-button{
+            margin: 0;
+            margin-right: 5px;
+        }
+    }
+}
+
+.div_user_post{
+    .div_container_image{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        div{
+            width: 33%;
+            
+        }
+    }
+}

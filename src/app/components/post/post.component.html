@@ -1,0 +1,43 @@
+<ion-card class="card_container">
+  <ion-card-header>
+    <ion-item lines="none" class="ion-no-padding" (click)="goToUserProfile()">
+      <ion-avatar>
+        <img src="{{post.user.picture.thumbnail}}" />
+      </ion-avatar>
+      <ion-label class="ion-margin-start">
+        <h4><b>{{post.user.name.first}} {{post.user.name.last}}</b></h4>
+        <p>{{post.user.location.city}}</p>
+      </ion-label>
+      <ion-button fill="clear" color="dark" slot="end">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-card-header>
+  <ion-card-content>
+    <img src="{{post.image}}"/>
+  </ion-card-content>
+  <div class="div_icon_wrapper">
+    <div class="div_icon_inner">
+      <ion-icon name="heart-outline" (click)="likeDislike()" *ngIf="!likeFlag"></ion-icon>
+      <ion-icon name="heart" color="danger" (click)="likeDislike()" *ngIf="likeFlag"></ion-icon>
+      <ion-icon name="chatbubble-outline"></ion-icon>
+      <ion-icon name="send-outline"></ion-icon>
+    </div>
+    <div>
+      <ion-icon name="bookmark-outline"></ion-icon>
+    </div>
+  </div>
+  <ion-label><b>{{post.likes}} likes</b></ion-label>
+  <ion-label>
+    <b> {{post.user.name.first}} {{post.user.name.last}}</b>
+    <span> {{post.post}}</span>
+  </ion-label>
+  <ion-label color="primary">{{post.hashtags}}</ion-label>
+  <ion-label>View all {{post.commentsCounter}} comments</ion-label>
+  <ion-item lines="none" class="ion-no-padding">
+    <ion-avatar slot="start">
+      <img src="{{post.user.picture.thumbnail}}">
+    </ion-avatar>
+    <ion-input placeholder="add a comment"></ion-input>
+  </ion-item>
+</ion-card>

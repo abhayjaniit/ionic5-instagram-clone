@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="div_container">
+    <div class="div_login">
+      <ion-label class="lbl_title">Instagram</ion-label>
+      <div class="div_inner_login">
+        <ion-item lines="none">
+          <ion-input placeholder="Enter username, email, phone" type="email" [(ngModel)]="username"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input placeholder="Enter password" type="pasword" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input placeholder="Enter firstname" type="text" [(ngModel)]="firstname"></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input placeholder="Enter lastname" type="text" [(ngModel)]="lastname"></ion-input>
+        </ion-item>
+        <ion-button color="secondary" expand="full" (click)="signup()">Sing up</ion-button>
+      </div>
+    </div>
+    <div class="div_login">
+      <ion-label color="dark" (click)="goToSignin()">Already have an account ? <ion-label color="primary">Sign in</ion-label>
+      </ion-label>
+    </div>
+  </div>
+</ion-content>

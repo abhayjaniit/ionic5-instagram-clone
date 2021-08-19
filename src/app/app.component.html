@@ -1,0 +1,35 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu side="end" contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-item lines="none">
+            <ion-icon name="cog-outline" slot="start"></ion-icon>
+            Setting
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon name="archive-outline" slot="start"></ion-icon>
+            Archive
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon name="bookmark-outline" slot=start></ion-icon>
+            Saved  
+          </ion-item>
+          <ion-item lines="none">
+            <ion-icon name="list-outline" slot="start"></ion-icon>
+            Closed Friends
+          </ion-item>
+          <ion-item lines="none" (click)="logout()">
+            <ion-icon name="power-outline" slot="start" color="danger"></ion-icon>
+            <ion-label color="danger">Logout</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id='main-content'></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
